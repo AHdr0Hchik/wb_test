@@ -14,20 +14,12 @@ export class AppService {
         private readonly spreadsheetIds: string[]
     ) {}
 
-    /*async start(): Promise<void> {
+    async start(): Promise<void> {
         // Запуск сбора данных каждый час
         schedule('0 * * * *', () => this.collectData());
         
         // Запуск выгрузки в Google Sheets каждый день в 00:05
         schedule('5 0 * * *', () => this.exportToGoogleSheets());
-    }*/
-
-    async start(): Promise<void> {
-        // Запуск сбора данных каждую минуту
-        schedule('* * * * *', () => this.collectData());
-        
-        // Запуск выгрузки в Google Sheets каждый день в 00:05
-        schedule('* * * * *', () => this.exportToGoogleSheets());
     }
 
 
@@ -46,7 +38,7 @@ export class AppService {
     private async exportToGoogleSheets(): Promise<void> {
         try {
             const yesterday = new Date();
-            yesterday.setDate(yesterday.getDate());
+            yesterday.setDate(yesterday.getDate() - 1);
             
             const tariffs = await this.db.getTariffsByDate(yesterday);
             for (const spreadsheetId of this.spreadsheetIds) {

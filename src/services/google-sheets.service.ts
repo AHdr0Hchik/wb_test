@@ -38,7 +38,7 @@ export class GoogleSheetsService {
         try {
             await sheets.spreadsheets.values.update({
                 spreadsheetId,
-                range: `'${process.env.SHEET_NAME}-${tariffs[0].date}'!A1`, // Изменили диапазон и добавили кавычки
+                range: `'${process.env.SHEET_NAME}-${tariffs[0].date}'!A1`,
                 valueInputOption: 'RAW',
                 requestBody: { values: allValues }
             });
