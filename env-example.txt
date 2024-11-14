@@ -1,0 +1,18 @@
+# Database
+DATABASE_URL=postgresql://postgres:password@postgres:5432/wb_test
+
+# Wildberries API
+WB_API_TOKEN=
+
+# Google Sheets
+# JSON-строка с учетными данными сервисного аккаунта Google
+GOOGLE_CREDENTIALS=
+
+# Список ID Google таблиц через запятую
+SPREADSHEET_IDS=
+
+SHEET_NAME=stocks_coefs
+# App Settings
+NODE_ENV=development
+PORT=3000
+LOG_LEVEL=info

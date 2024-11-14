@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "module": "NodeNext",
+      "target": "es2017",
+      "baseUrl": "./",
+      "paths": {
+        "#*": ["./src/*"]
+      },
+      "esModuleInterop": true,
+      "allowJs": true,
+      "checkJs": true,
+      "noEmit": true,
+      "skipLibCheck": true,
+      "moduleResolution": "NodeNext",
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true
+    },
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "src/**/*.test.*", "src/**/*.spec.*"]
+  }
