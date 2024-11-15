@@ -7,9 +7,10 @@ export class DbService {
     
     async testConnection(): Promise<boolean> {
         try {
-            
+            await this.knex.raw('SELECT 1');
             return true;
         } catch (error) {
+            console.error('Database connection test failed:', error);
             return false;
         }
     }
